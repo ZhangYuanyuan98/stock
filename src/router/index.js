@@ -83,12 +83,17 @@ const routes = [
   },
 ]
 
+// const router = new VueRouter({
+//   // history: createWebHistory(),
+//   history: createWebHashHistory(),
+//   routes,
+
+// })
 const router = new VueRouter({
-  // history: createWebHistory(),
-  routes,
-
+  mode: 'hash', // 或者 'history'
+  base: process.env.BASE_URL,
+  routes
 })
-
 // 
 // new Vue({
 //   router, // 注入到Vue实例中

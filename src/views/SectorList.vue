@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <TopNavbar />
-    <el-container style="width: 100%; border: 1px solid #eee ;display: flex; justify-content: center;">
+    <el-container class="app-container">
 
         <!-- 引入左侧导航 -->
         <SideBar />
-        <el-main>
+        <el-main  class="main-content">
             <div class="search-container">
             <el-input
               placeholder="请输入板块代码"
@@ -927,26 +927,25 @@ export default {
 
 </script>
 <style>
-#app {
-  width: 100vw;
-  height: 100vh;
-  /* display: flex;
-  flex-direction: column; */
+/* .el-container {
+    height:100vh;
+    overflow: hidden;
+  } */
+  .app-container {
+  width: 100%;
+  height: 100vh; /* 减去 TopNavbar 的高度 */
+  border: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  flex: 1; /* 占据剩余空间 */
 }
-body {
+.main-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
-
-.el-container {
-    height:calc(100vh - 70px);
-    /* overflow-y: auto; */
-    overflow: hidden;
-  }
-.el-main {
-    height:100%;
-    /* overflow-y: auto; */
-    overflow: hidden;
-  }
 
 /* 设置搜索框容器右对齐并设置间距 */
 .search-container {
@@ -958,7 +957,7 @@ body {
 }
 .table-wrapper {
   overflow: auto;
-  height: 760px;
+  height: 100vh;
   width: 100%;
   /* margin-bottom: 20px; */
   /* border: 1px solid #ccc; /* 添加边框样式 */

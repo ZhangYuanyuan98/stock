@@ -1,9 +1,12 @@
-// const { defineConfig } = require('@vue/cli-service')
-// module.exports = defineConfig({
-//   transpileDependencies: true
-// })
-module.exports = {
+const { defineConfig } = require('@vue/cli-service')
+
+module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: './',
-  outputDir: 'dist'
-}
+  // plugins: [vue()],
+  // base:"https://github.com/ZhangYuanyuan98/stock.git"
+})
+// module.exports = {
+//   transpileDependencies: true,
+//   publicPath: './',
+//   outputDir: 'dist'
+// }
